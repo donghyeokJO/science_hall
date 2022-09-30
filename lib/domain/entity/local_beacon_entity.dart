@@ -8,7 +8,7 @@ class LocalBeaconEntity with _$LocalBeaconEntity {
   factory LocalBeaconEntity({
     required String uuid,
     required int major,
-    required int minor,
+    // required int minor,
   }) = _LocalBeaconEntity;
 
   factory LocalBeaconEntity.fromJson(Map<String, dynamic> json) => _$LocalBeaconEntityFromJson(json);

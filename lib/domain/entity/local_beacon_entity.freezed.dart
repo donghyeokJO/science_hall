@@ -22,7 +22,7 @@ LocalBeaconEntity _$LocalBeaconEntityFromJson(Map<String, dynamic> json) {
 mixin _$LocalBeaconEntity {
   String get uuid => throw _privateConstructorUsedError;
   int get major => throw _privateConstructorUsedError;
-  int get minor => throw _privateConstructorUsedError;
+  // int get minor => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,8 @@ abstract class $LocalBeaconEntityCopyWith<$Res> {
   factory $LocalBeaconEntityCopyWith(
           LocalBeaconEntity value, $Res Function(LocalBeaconEntity) then) =
       _$LocalBeaconEntityCopyWithImpl<$Res>;
-  $Res call({String uuid, int major, int minor});
+  // $Res call({String uuid, int major, int minor});
+  $Res call({String uuid, int major});
 }
 
 /// @nodoc
@@ -51,7 +52,7 @@ class _$LocalBeaconEntityCopyWithImpl<$Res>
   $Res call({
     Object? uuid = freezed,
     Object? major = freezed,
-    Object? minor = freezed,
+    // Object? minor = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -62,10 +63,10 @@ class _$LocalBeaconEntityCopyWithImpl<$Res>
           ? _value.major
           : major // ignore: cast_nullable_to_non_nullable
               as int,
-      minor: minor == freezed
-          ? _value.minor
-          : minor // ignore: cast_nullable_to_non_nullable
-              as int,
+      // minor: minor == freezed
+      //     ? _value.minor
+      //     : minor // ignore: cast_nullable_to_non_nullable
+      //         as int,
     ));
   }
 }
@@ -77,7 +78,8 @@ abstract class _$$_LocalBeaconEntityCopyWith<$Res>
           $Res Function(_$_LocalBeaconEntity) then) =
       __$$_LocalBeaconEntityCopyWithImpl<$Res>;
   @override
-  $Res call({String uuid, int major, int minor});
+  // $Res call({String uuid, int major, int minor});
+  $Res call({String uuid, int major});
 }
 
 /// @nodoc
@@ -95,7 +97,7 @@ class __$$_LocalBeaconEntityCopyWithImpl<$Res>
   $Res call({
     Object? uuid = freezed,
     Object? major = freezed,
-    Object? minor = freezed,
+    // Object? minor = freezed,
   }) {
     return _then(_$_LocalBeaconEntity(
       uuid: uuid == freezed
@@ -106,10 +108,10 @@ class __$$_LocalBeaconEntityCopyWithImpl<$Res>
           ? _value.major
           : major // ignore: cast_nullable_to_non_nullable
               as int,
-      minor: minor == freezed
-          ? _value.minor
-          : minor // ignore: cast_nullable_to_non_nullable
-              as int,
+      // minor: minor == freezed
+      //     ? _value.minor
+      //     : minor // ignore: cast_nullable_to_non_nullable
+      //         as int,
     ));
   }
 }
@@ -118,7 +120,8 @@ class __$$_LocalBeaconEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_LocalBeaconEntity implements _LocalBeaconEntity {
   _$_LocalBeaconEntity(
-      {required this.uuid, required this.major, required this.minor});
+      // {required this.uuid, required this.major, required this.minor});
+      {required this.uuid, required this.major});
 
   factory _$_LocalBeaconEntity.fromJson(Map<String, dynamic> json) =>
       _$$_LocalBeaconEntityFromJson(json);
@@ -127,12 +130,13 @@ class _$_LocalBeaconEntity implements _LocalBeaconEntity {
   final String uuid;
   @override
   final int major;
-  @override
-  final int minor;
+  // @override
+  // final int minor;
 
   @override
   String toString() {
-    return 'LocalBeaconEntity(uuid: $uuid, major: $major, minor: $minor)';
+    // return 'LocalBeaconEntity(uuid: $uuid, major: $major, minor: $minor)';
+    return 'LocalBeaconEntity(uuid: $uuid, major: $major)';
   }
 
   @override
@@ -141,8 +145,9 @@ class _$_LocalBeaconEntity implements _LocalBeaconEntity {
         (other.runtimeType == runtimeType &&
             other is _$_LocalBeaconEntity &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
-            const DeepCollectionEquality().equals(other.major, major) &&
-            const DeepCollectionEquality().equals(other.minor, minor));
+            const DeepCollectionEquality().equals(other.major, major)
+        );
+            // && const DeepCollectionEquality().equals(other.minor, minor))
   }
 
   @JsonKey(ignore: true)
@@ -151,7 +156,8 @@ class _$_LocalBeaconEntity implements _LocalBeaconEntity {
       runtimeType,
       const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(major),
-      const DeepCollectionEquality().hash(minor));
+      // const DeepCollectionEquality().hash(minor)
+      );
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +177,8 @@ abstract class _LocalBeaconEntity implements LocalBeaconEntity {
   factory _LocalBeaconEntity(
       {required final String uuid,
       required final int major,
-      required final int minor}) = _$_LocalBeaconEntity;
+      // required final int minor
+      }) = _$_LocalBeaconEntity;
 
   factory _LocalBeaconEntity.fromJson(Map<String, dynamic> json) =
       _$_LocalBeaconEntity.fromJson;
@@ -180,8 +187,8 @@ abstract class _LocalBeaconEntity implements LocalBeaconEntity {
   String get uuid;
   @override
   int get major;
-  @override
-  int get minor;
+  // @override
+  // int get minor;
   @override
   @JsonKey(ignore: true)
   _$$_LocalBeaconEntityCopyWith<_$_LocalBeaconEntity> get copyWith =>

@@ -9,9 +9,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../util/dev_log.dart';
 
 
-Future<void> saveBeaconUUID(String uuid,int major,int minor) async {
+Future<void> saveBeaconUUID(String uuid,int major) async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  var entity = LocalBeaconEntity(uuid: uuid, major: major, minor: minor);
+  // var entity = LocalBeaconEntity(uuid: uuid, major: major, minor: minor);
+  var entity = LocalBeaconEntity(uuid: uuid, major: major);
   await prefs.setString(ApiUrl.LOCAL_BEACON, jsonEncode(entity));
 }
 

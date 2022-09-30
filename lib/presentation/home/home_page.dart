@@ -1,6 +1,7 @@
 import 'package:arc/arc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_beacon/flutter_beacon.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -52,18 +53,25 @@ class _HomePageState extends ConsumerState<HomePage>
             _header,
             _quickMenu(context),
             ActionButton(
-              buttonTitle: "관람시작",
+              buttonTitle: beaconManger.bluetoothState == BluetoothState.stateOn ? "관람중" : "관람시작",
               isEnable: true,
               onPressed: () async {
                 var userInfo = await getUserInfo();
                 if (userInfo.isNullOrEmpty) {
                   context.router.push(const SignupRoute());
                 } else {
-                  final checkPermission = await checkBeaconReady();
-                  Log.i("checkPermission => $checkPermission");
-                  if (checkPermission) {
-                    beaconManger.check();
+                  if(beaconManger.bluetoothState == BluetoothState.stateOn) {
+                    await beaconManger.pauseScanBeacon();
+
+                  } else {
+                    final checkPermission = await checkBeaconReady();
+                    Log.i("checkPermission => $checkPermission");
+                    if (checkPermission) {
+                      beaconManger.check();
+                    }
                   }
+
+                  setState(() {});
                 }
               },
             ),
